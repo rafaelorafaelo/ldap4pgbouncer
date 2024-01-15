@@ -1,0 +1,2 @@
+auth     required   pam_sss.so domains=my_domain
+account  [default=bad success=ok user_unknown=ignore] pam_sss.so
