@@ -10,8 +10,10 @@ https://man.archlinux.org/man/sssd.conf.5.en
 https://man.archlinux.org/man/sssd-ldap.5.en
 https://man.archlinux.org/man/sssd-ldap-attributes.5.en
 
-My example files show a minimal configuration as a starting point. PAM must be activated in the pgbouncer.ini file: auth_type = pam
+My example files show a minimal configuration as a starting point. PAM must be activated in the ```pgbouncer.ini``` file: ```auth_type = pam```
 
-The pgbouncer file configures PAM when called by PgBouncer. The file is usually located under /etc/pam.d.
+The ```pgbouncer``` file configures PAM when called by PgBouncer. The file is usually located under ```/etc/pam.d```.
 
-The pgbouncer.conf file configures SSSD and thus access to the Active Directory. It must either be incorporated into sssd.conf, or is located, for example, under /etc/sssd/conf.d. After changes, the sssd.service must be restarted.
+The ```pgbouncer.conf``` file configures SSSD and thus access to the Active Directory. It must either be incorporated into ```sssd.conf```, or is located, for example, under ```/etc/sssd/conf.d```. After changes, the sssd.service must be restarted.
+
+You can check your configuration like this: ```sssctl user-checks postgresql_user -a auth -s pgbouncer```, if you don't trust your PgBouncer configuration.
