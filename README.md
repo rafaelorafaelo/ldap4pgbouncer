@@ -6,9 +6,10 @@ simple ldap authentication configuration for pgbouncer with pam and sssd
 My method uses PAM and SSSD to authenticate against an Active Directory. With a few adjustments, PgBouncer can also authenticate against a generic LDAP server or with pam_ldap instead of SSSD. The special thing is that there are no operating system users in the game. The authentication is only used by PgBouncer.
 
 Important man pages are
-https://man.archlinux.org/man/sssd.conf.5.en
-https://man.archlinux.org/man/sssd-ldap.5.en
-https://man.archlinux.org/man/sssd-ldap-attributes.5.en
+* https://man.archlinux.org/man/sssd.conf.5.en
+* https://man.archlinux.org/man/sssd-ldap.5.en
+* https://man.archlinux.org/man/sssd-ldap-attributes.5.en
+* https://man.archlinux.org/man/pam_sss.8
 
 My example files show a minimal configuration as a starting point. PAM must be activated in the ```pgbouncer.ini``` file: ```auth_type = pam```
 
